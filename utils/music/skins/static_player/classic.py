@@ -143,11 +143,6 @@ class ClassicStaticSkin:
                         value=PlayerControls.loop_mode,
                         description="Enable/Disable song/queue loop."
                     ),
-                    disnake.SelectOption(
-                        label=("Disable" if player.autoplay else "Enable") + " autoplay", emoji="🔄",
-                        value=PlayerControls.autoplay,
-                        description="System for automatic addition of music when the queue is empty."
-                    ),
                 ]
             ),
         ]

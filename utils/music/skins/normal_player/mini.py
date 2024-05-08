@@ -123,11 +123,6 @@ class MiniSkin:
                         description="Move the current song's time to the start."
                     ),
                     disnake.SelectOption(
-                        label=f"Volume: {player.volume}%", emoji="🔊",
-                        value=PlayerControls.volume,
-                        description="Adjust volume."
-                    ),
-                    disnake.SelectOption(
                         label="Shuffle", emoji="🔀",
                         value=PlayerControls.shuffle,
                         description="Shuffle the queue songs."
@@ -141,11 +136,6 @@ class MiniSkin:
                         label="Loop", emoji="🔁",
                         value=PlayerControls.loop_mode,
                         description="Activate/Deactivate song/queue looping."
-                    ),
-                    disnake.SelectOption(
-                        label=("Disable" if player.autoplay else "Enable") + " autoplay", emoji="🔄",
-                        value=PlayerControls.autoplay,
-                        description="System to automatically add music when the queue is empty."
                     ),
                 ]
             ),

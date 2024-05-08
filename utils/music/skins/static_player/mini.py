@@ -194,11 +194,6 @@ class MiniStaticSkin:
                         description="Go back to the beginning of the current song."
                     ),
                     disnake.SelectOption(
-                        label=f"Volume: {player.volume}%", emoji="🔊",
-                        value=PlayerControls.volume,
-                        description="Adjust volume."
-                    ),
-                    disnake.SelectOption(
                         label="Shuffle", emoji="🔀",
                         value=PlayerControls.shuffle,
                         description="Shuffle songs in the queue."
@@ -212,11 +207,6 @@ class MiniStaticSkin:
                         label="Loop", emoji="🔁",
                         value=PlayerControls.loop_mode,
                         description="Enable/Disable song/queue loop."
-                    ),
-                    disnake.SelectOption(
-                        label=("Disable" if player.autoplay else "Enable") + " autoplay", emoji="🔄",
-                        value=PlayerControls.autoplay,
-                        description="System for automatic addition of music when the queue is empty."
                     ),
                 ]
             ),

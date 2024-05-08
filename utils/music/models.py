@@ -2050,6 +2050,16 @@ class LavalinkPlayer(wavelink.Player):
                                 description="Add a song/playlist to the queue."
                             ),
                             disnake.SelectOption(
+                                label="Enqueue favorite", emoji="⭐",
+                                value=PlayerControls.enqueue_fav,
+                                description="Enqueue one of your favorites."
+                            ),
+                            disnake.SelectOption(
+                                label="Add to favorites", emoji="💗",
+                                value=PlayerControls.add_favorite,
+                                description="Add the current song to your favorites."
+                            ),
+                            disnake.SelectOption(
                                 label="Seek to start", emoji="⏪",
                                 value=PlayerControls.seek_to_start,
                                 description="Go back to the beginning of the current song."
@@ -2073,6 +2083,11 @@ class LavalinkPlayer(wavelink.Player):
                                 label="Loop", emoji="🔁",
                                 value=PlayerControls.loop_mode,
                                 description="Enable/Disable song/queue looping."
+                            ),
+                            disnake.SelectOption(
+                                label=("Disable" if self.nightcore else "Enable") + " nightcore effect", emoji="🇳",
+                                value=PlayerControls.nightcore,
+                                description="Effect that increases the speed and pitch of the song."
                             ),
                             disnake.SelectOption(
                                 label=("Disable" if self.autoplay else "Enable") + " autoplay",

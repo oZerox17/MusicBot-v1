@@ -124,6 +124,11 @@ class EmbedLinkStaticSkin:
                             description="Add a song/playlist to the queue."
                         ),
                         disnake.SelectOption(
+                            label="Add favorite to queue", emoji="⭐",
+                            value=PlayerControls.enqueue_fav,
+                            description="Add one of your favorites to the queue."
+                        ),
+                        disnake.SelectOption(
                             label="Play from start", emoji="⏪",
                             value=PlayerControls.seek_to_start,
                             description="Go back to the beginning of the current song."
@@ -147,6 +152,11 @@ class EmbedLinkStaticSkin:
                             label="Loop", emoji="🔁",
                             value=PlayerControls.loop_mode,
                             description="Enable/Disable song/queue loop."
+                        ),
+                        disnake.SelectOption(
+                            label=("Disable" if player.nightcore else "Enable") + " nightcore effect", emoji="🇳",
+                            value=PlayerControls.nightcore,
+                            description="Effect that increases speed and pitch of the music."
                         ),
                         disnake.SelectOption(
                             label=("Disable" if player.autoplay else "Enable") + " autoplay", emoji="🔄",

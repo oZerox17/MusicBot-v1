@@ -138,11 +138,6 @@ class ClassicSkin:
                         description="Go back to the start of the current song."
                     ),
                     disnake.SelectOption(
-                        label=f"Volume: {player.volume}%", emoji="🔊",
-                        value=PlayerControls.volume,
-                        description="Adjust volume."
-                    ),
-                    disnake.SelectOption(
                         label="Shuffle", emoji="🔀",
                         value=PlayerControls.shuffle,
                         description="Shuffle the queue songs."
@@ -156,11 +151,6 @@ class ClassicSkin:
                         label="Repeat", emoji="🔁",
                         value=PlayerControls.loop_mode,
                         description="Toggle song/queue repeat."
-                    ),
-                    disnake.SelectOption(
-                        label=("Disable" if player.autoplay else "Enable") + " autoplay", emoji="🔄",
-                        value=PlayerControls.autoplay,
-                        description="Automatically add music when the queue is empty."
                     ),
                 ]
             ),

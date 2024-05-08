@@ -176,11 +176,6 @@ class DefaultProgressbarSkin:
                         description="Go back to the beginning of the current song."
                     ),
                     disnake.SelectOption(
-                        label=f"Volume: {player.volume}%", emoji="🔊",
-                        value=PlayerControls.volume,
-                        description="Adjust volume."
-                    ),
-                    disnake.SelectOption(
                         label="Shuffle", emoji="🔀",
                         value=PlayerControls.shuffle,
                         description="Shuffle songs in the queue."
@@ -194,11 +189,6 @@ class DefaultProgressbarSkin:
                         label="Loop", emoji="🔁",
                         value=PlayerControls.loop_mode,
                         description="Enable/Disable song/queue looping."
-                    ),
-                    disnake.SelectOption(
-                        label=("Disable" if player.autoplay else "Enable") + " autoplay", emoji="🔄",
-                        value=PlayerControls.autoplay,
-                        description="Automatically add music when the queue is empty."
                     ),
                 ]
             ),
