@@ -662,9 +662,7 @@ class Misc(commands.Cog):
             embed.description += f"> 🎧 **⠂Current listeners:** `{len(listeners):,}`\n"
 
         if bot.pool.commit:
-            embed.description += f"> 📥 **⠂Current commit:** [`{bot.pool.commit[:7]}`]({bot.pool.remote_git_url}/commit/{bot.pool.commit})\n"
-
-        embed.description += f"> 🐍 **⠂Python Version:** `{platform.python_version()}`\n" \
+            embed.description += f"> 🐍 **⠂Python Version:** `{platform.python_version()}`\n" \
                             f"> 📦 **⠂Disnake Version:** `{disnake.__version__}`\n" \
                             f"> 📶 **⠂Latency:** `{round(bot.latency * 1000)}ms`\n" \
                             f"{ram_msg}" \
@@ -691,8 +689,6 @@ class Misc(commands.Cog):
 
             if user_data["custom_prefix"]:
                 embed.description += f"> ⌨️ **⠂Your User Prefix:** `{disnake.utils.escape_markdown(user_data['custom_prefix'], as_needed=True)}`\n"
-
-        links = "[`[Source]`](https://github.com/oZerox17/MusicBot-v1.git)"
 
         if bot.config["SUPPORT_SERVER"]:
             links = f"[`[Support]`]({bot.config['SUPPORT_SERVER']})  **|** {links}"
