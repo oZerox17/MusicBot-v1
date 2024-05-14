@@ -690,6 +690,8 @@ class Misc(commands.Cog):
             if user_data["custom_prefix"]:
                 embed.description += f"> ⌨️ **⠂Your User Prefix:** `{disnake.utils.escape_markdown(user_data['custom_prefix'], as_needed=True)}`\n"
 
+        links = ""
+
         if bot.config["SUPPORT_SERVER"]:
             links = f"[`[Support]`]({bot.config['SUPPORT_SERVER']})  **|** {links}"
 
