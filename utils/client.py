@@ -16,8 +16,6 @@ from importlib import import_module
 from subprocess import check_output
 from typing import Optional, Union, List
 
-from some_module import generate_user_agent
-
 import aiofiles
 import aiohttp
 import disnake
@@ -87,20 +85,25 @@ class BotPool:
         self.lavalink_connect_queue = {}
 
 class YourClass:
+    def __init__(self, config, lavalink_connect_queue):
+        self.config = config
+        self.lavalink_connect_queue = lavalink_connect_queue
+        self.current_useragent = generate_user_agent()
+
     def reset_useragent(self):
         self.current_useragent = generate_user_agent()
 
     async def connect_lavalink_queue_task(self, identifier: str):
         delay_secs = float(self.config.get("LAVALINK_QUEUE_DELAY", 1.5))
 
-        try:
-            while True:
+        while True:
+            try:
                 async with asyncio.timeout(600):
                     bot, data = await self.lavalink_connect_queue[identifier].get()
                     await bot.get_cog("Music").connect_node(data)
                     await asyncio.sleep(delay_secs)
-        except asyncio.TimeoutError:
-            pass
+            except asyncio.TimeoutError:
+                pass
 
     @property
     def database(self) -> Union[LocalDatabase, MongoDatabase]:
