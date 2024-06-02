@@ -16,6 +16,8 @@ from importlib import import_module
 from subprocess import check_output
 from typing import Optional, Union, List
 
+from some_module import generate_user_agent
+
 import aiofiles
 import aiohttp
 import disnake
@@ -84,12 +86,12 @@ class BotPool:
         self.processing_gc: bool = False
         self.lavalink_connect_queue = {}
 
+class YourClass:
     def reset_useragent(self):
         self.current_useragent = generate_user_agent()
 
     async def connect_lavalink_queue_task(self, identifier: str):
-
-        delay_secs = int(self.config.get("LAVALINK_QUEUE_DELAY", 1.5))
+        delay_secs = float(self.config.get("LAVALINK_QUEUE_DELAY", 1.5))
 
         try:
             while True:
